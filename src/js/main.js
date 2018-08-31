@@ -34,7 +34,9 @@ $(function(){
   optionsList.map(item=>{
     createVideoTag(item);
   });
-
+  $(document).on('click', 'button', function(){
+    $('#vv')[0].pause();
+  });
   $(document).on('click', '#b1', function(){
     setVideoStatus($('#vv'), 'hide');
     setVideoStatus($('#v1'), 'show');
@@ -50,5 +52,11 @@ $(function(){
     setVideoStatus($('#v3'), 'show');
     $('#v3')[0].play();
   });
-  $('showPanel');
+  $(document).on('click', '#bk', function(){
+    setVideoStatus($('#v1'), 'hide');
+    setVideoStatus($('#v2'), 'hide');
+    setVideoStatus($('#v3'), 'hide');
+    setVideoStatus($('#vv'), 'show');
+    $('#vv')[0].play();
+  });
 });
