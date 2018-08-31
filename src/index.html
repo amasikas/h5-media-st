@@ -7,16 +7,39 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    #showPanel{
+      position: relative;
+      width: 100%;
+      height: 300px;
+    }
+    video{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    #vv{
+      z-index: 100;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Add your site or application content here -->
-  <video id="vv" src="http://openclass-cdn.vipkid.com.cn/gateway/beta/video/vdobe65b76ab04d1239b6878f871f08fe81.mp4" width="500" controls></video>
-  <div>
-    <canvas id="superman"></canvas>
+  <div id="showPanel">
+
+    <video id="vv" src="http://openclass-cdn.vipkid.com.cn/gateway/beta/video/vdobe65b76ab04d1239b6878f871f08fe81.mp4" width="100%" controls playsinline="true"></video>
+    <div id="cache">
+
+    </div>
   </div>
-  <button id="pl">PLAY</button>
-  <button id="bigboom">别跑！</button>
+  <div id="ctrl">
+    <button id="b1">1</button>
+    <button id="b2">2</button>
+    <button id="b3">3</button>
+  </div>
+
 
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
