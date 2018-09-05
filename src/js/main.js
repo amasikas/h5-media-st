@@ -9,6 +9,10 @@ $(function(){
     id: 'v3',
     url:'http://openclass-cdn.vipkid.com.cn/gateway/beta/video/vdo269c81ef07fe351a7db743c7f8d99364.mp4'
   }];
+  // const optionsList = [{
+  //   id:'v1',
+  //   url:'http://openclass-cdn.vipkid.com.cn/gateway/beta/video/vdo6f9f6f482ea4b1aa87cb769258b8aabd.mp4'
+  // }];
   function createVideoTag(obj){
     let $video = $('<video>');
     $video.attr('id', obj.id);
@@ -28,11 +32,15 @@ $(function(){
       $('video').css('z-index', '0');
     }else{
       $target.css('z-index', '100');
+      //$target.css('display', 'block');
     }
   }
 
   optionsList.map(item=>{
     createVideoTag(item);
+  });
+  document.querySelector('#vv').addEventListener('canplay', function(){
+    $('#vv')[0].play();
   });
   $(document).on('click', 'button', function(){
     $('#vv')[0].pause();
